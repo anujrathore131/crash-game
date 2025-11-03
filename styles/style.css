@@ -1,0 +1,119 @@
+/* premade css is being used here (i am not that good with css) 🥲 */
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, #0b0e18, #05070c 80%);
+  font-family: "Poppins", "Inter", system-ui, sans-serif;
+  color: #fff;
+}
+
+/* Button Bar */
+.ui {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(0, 255, 85, 0.15);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Buttons */
+.ui button {
+  background: linear-gradient(135deg, #20ff65, #00b640);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(32, 255, 101, 0.4);
+}
+
+.ui button:hover:enabled {
+  background: linear-gradient(135deg, #37ff7f, #0ebf47);
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(32, 255, 101, 0.6);
+}
+
+.ui button:active:enabled {
+  transform: scale(0.96);
+  box-shadow: 0 0 8px rgba(32, 255, 101, 0.4);
+}
+
+.ui button:disabled {
+  opacity: 0.35;
+  background: #1a3b26;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Status Text */
+.ui span {
+  color: #d0e2ff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(24, 100, 255, 0.1);
+  border: 1px solid rgba(24, 100, 255, 0.25);
+  box-shadow: inset 0 0 12px rgba(24, 100, 255, 0.2);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Animated glow when active */
+.ui span.active {
+  background: linear-gradient(90deg, rgba(36, 255, 117, 0.25), rgba(0, 195, 255, 0.25));
+  border: 1px solid rgba(0, 255, 123, 0.45);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 255, 106, 0.2);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ui {
+    flex-direction: column;
+    top: 12px;
+    padding: 10px;
+    gap: 8px;
+    width: calc(100% - 24px);
+    left: 12px;
+    transform: none;
+  }
+
+  .ui span {
+    font-size: 13px;
+  }
+
+  .ui button {
+    width: 100%;
+  }
+}
